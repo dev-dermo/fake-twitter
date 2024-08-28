@@ -6,8 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + TS</title>
   </head>
-  <body>
-    <div id="app"></div>
+  <body>    
+    <form method="post" action="/api/users">
+      <div>
+        <label for="username">Username:</label>
+        <input id="username" type="text" placeholder="john_doe" name="username" required>
+      </div>
+
+      <div>
+        <label for="email">Email:</label>
+        <input id="email" type="email" placeholder="john@email.com" name="email" required>
+      </div>
+
+      <div>
+        <label for="password">Password:</label>
+        <input id="password" type="password" placeholder="Enter Password" minlength="8" name="password" required>
+      </div>
+
+      <div>
+        <button type="submit">Signup</button>
+      </div>
+    </form>
+
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
