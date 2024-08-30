@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6,27 +6,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + TS</title>
   </head>
-  <body>    
-    <form method="post" action="/api/users">
+  <body>
+    <nav>
+      <ul>
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/users">Users</a>
+        </li>
+        <li>
+          <a href="/tweets">Tweets</a>
+        </li>
+      </ul>
+    </nav>
+    <form id="user-form" method="post" action="/api/users" style="display: none;">
       <div>
         <label for="username">Username:</label>
-        <input id="username" type="text" placeholder="john_doe" name="username" required>
+        <input
+          id="username"
+          type="text"
+          placeholder="john_doe"
+          name="username"
+          required
+        />
       </div>
 
       <div>
         <label for="email">Email:</label>
-        <input id="email" type="email" placeholder="john@email.com" name="email" required>
+        <input
+          id="email"
+          type="email"
+          placeholder="john@email.com"
+          name="email"
+          required
+        />
       </div>
 
       <div>
         <label for="password">Password:</label>
-        <input id="password" type="password" placeholder="Enter Password" minlength="8" name="password" required>
+        <input
+          id="password"
+          type="password"
+          placeholder="Enter Password"
+          minlength="8"
+          name="password"
+          required
+        />
       </div>
 
       <div>
         <button type="submit">Signup</button>
       </div>
     </form>
+
+    <ul id="users-list"></ul>
+
+    <form id="tweet-form" method="post" action="/api/tweets" style="display: none;">
+      <input id="user_id" type="hidden" name="user_id" value="" />
+
+      <div>
+        <label for="body">What's on your mind?</label><br />
+        <textarea
+          id="body"
+          name="body"
+          placeholder="What's on your mind..."
+          cols="80"
+          rows="10"
+          maxlength="140"
+          minlength="1"
+          required
+        ></textarea>
+      </div>
+
+      <div>
+        <button type="submit">Post Tweet</button>
+      </div>
+    </form>
+
+    <ul id="tweets-list"></ul>
 
     <script type="module" src="/src/main.ts"></script>
   </body>
